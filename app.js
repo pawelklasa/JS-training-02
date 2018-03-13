@@ -32,4 +32,3 @@
 
 // console.log(lis);
 
-// querySelectorAll
