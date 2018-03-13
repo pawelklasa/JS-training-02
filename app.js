@@ -32,3 +32,25 @@
 
 // console.log(lis);
 
+
+// document.querySelectorAll();
+const items = document.querySelectorAll('.item');
+
+console.log(items);
+
+items.forEach(function(item, index){
+  item.textContent = `${index}: Item`;
+});
+
+const itemOdd = document.querySelectorAll('div:nth-child(odd)');
+const itemEven = document.querySelectorAll('div:nth-child(even)');
+
+itemOdd.forEach(function(li, index){
+    li.style.background = '#ddd';
+  });
+
+  itemEven.forEach(function(li, index){
+    li.style.background = '#ccc';
+  });
+
+  
