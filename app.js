@@ -1,38 +1,48 @@
-// document.querySelector('.clear-tasks').addEventListener('click',
-//   function(e){
-//     console.log('Hello!');
-//     //e.preventDefault();
-// });
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+// // Click
+// clearBtn.addEventListener('click', runEvent);
 
-function onClick(e){
-  //console.log('Clicked');
-  let val;
+// // Rollover
+// clearBtn.addEventListener('mouseover', runEvent);
 
-  val = e;
+// // Double Click
+// clearBtn.addEventListener('dblclick', runEvent);
 
-  // Event target element
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList; // To get collection
+// // Mouse Down
+// clearBtn.addEventListener('mousedown', runEvent);
 
-  //val = e.target.innerText = 'Hi';
+// // Mouse Up
+// clearBtn.addEventListener('mouseup', runEvent);
 
-  // Get type
-  val = e.type;
+// // Mouse Enter
+// card.addEventListener('mouseenter', runEvent);
 
-  // Get timestamp
-  val = e.timeStamp;
+// // Mouse Leave
+// card.addEventListener('mouseleave', runEvent);
 
-  // Coord event relative to the window, number of pixels from the top
-  val = e.clientY;
-  val = e.clientX; // number of pixels from the right
+// // Mouse Over
+// card.addEventListener('mouseover', runEvent);
 
-  // Coord event relative to the element itself, number of pixels from the top
-  val = e.offsetY;
-  val = e.offsetX; // number of pixels from the right
+// // Mouse Out
+// card.addEventListener('mouseout', runEvent);
 
-  console.log(val);
+// Mouse Move
+card.addEventListener('mousemove', runEvent);
+
+
+// Event Handler
+function runEvent(e){
+  console.log(`EVENT TYPE: ${e.type}`);
+  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
 }
+
+let val;
+
+val = heading;
+
+console.log(val);
+
