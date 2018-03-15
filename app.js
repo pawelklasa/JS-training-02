@@ -1,60 +1,38 @@
-// Replace element
+// document.querySelector('.clear-tasks').addEventListener('click',
+//   function(e){
+//     console.log('Hello!');
+//     //e.preventDefault();
+// });
 
-// Create new element
-const newHeading = document.createElement('h2');
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
 
-// Add id
-newHeading.id = 'task-title';
+function onClick(e){
+  //console.log('Clicked');
+  let val;
 
-// Add text
-//newHeading.innerText = 'New Heading';
-newHeading.appendChild(document.createTextNode('New Heading')); 
+  val = e;
 
-// Get old heading
-const oldHeading = document.getElementById('task-title');
+  // Event target element
+  val = e.target;
+  val = e.target.id;
+  val = e.target.className;
+  val = e.target.classList; // To get collection
 
-// Parent
-const cardAction = document.querySelector('.card-action');
+  //val = e.target.innerText = 'Hi';
 
-// Replace
+  // Get type
+  val = e.type;
 
-cardAction.replaceChild(newHeading, oldHeading);
+  // Get timestamp
+  val = e.timeStamp;
 
-// console.log(newHeading);
+  // Coord event relative to the window, number of pixels from the top
+  val = e.clientY;
+  val = e.clientX; // number of pixels from the right
 
-// Remove element
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
+  // Coord event relative to the element itself, number of pixels from the top
+  val = e.offsetY;
+  val = e.offsetX; // number of pixels from the right
 
-// Remove list item
-lis[0].remove();
-
-// Also remove by child
-list.removeChild(lis[3]);
-
-//  Classes and atributes
-
-const firstLi = document.querySelector('li:first-child');
-const link = firstLi.children[0];
-
-let val;
-
-// Clasess
-val = link.className;
-val = link.classList;
-val = link.classList[0];
-link.classList.add('test');
-link.classList.remove('test');    
-
-val = link;
-
-// Attributes
-val = link.getAttribute('href');
-val = link.setAttribute('href', 'http://google.com');
-val = link.hasAttribute('href');
-link.setAttribute('title', 'Google');
-link.removeAttribute('title');
-
-val = link;
-
-console.log(val); 
+  console.log(val);
+}
