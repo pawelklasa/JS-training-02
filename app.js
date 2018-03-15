@@ -49,6 +49,12 @@ link.classList.remove('test');
 val = link;
 
 // Attributes
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'http://google.com');
+val = link.hasAttribute('href');
+link.setAttribute('title', 'Google');
+link.removeAttribute('title');
 
+val = link;
 
-console.log(val);
+console.log(val); 
