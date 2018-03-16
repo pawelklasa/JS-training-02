@@ -1,37 +1,43 @@
-const form = document.querySelector('form');
-const taskInput = document.getElementById('task');
+// set local storage item
+// localStorage.setItem('name', 'John');
+// localStorage.setItem('age', '30');
 
-form.addEventListener('submit', runEvent);
+// set session storage item
+// sessionStorage.setItem('name', 'Beth');
 
-taskInput.value = ''; // Clearing form - typically after submitting
+// remove from storage
+// localStorage.removeItem('name');
 
-// Keydown
-// taskInput.addEventListener('keydown', runEvent);
-// Keydown
-// taskInput.addEventListener('keyup', runEvent);
-// Keypress
-// taskInput.addEventListener('keypress', runEvent);
-// Focus
-// taskInput.addEventListener('focus', runEvent);
-// Blur
-// taskInput.addEventListener('blur', runEvent);
-// Cut
-// taskInput.addEventListener('cut', runEvent);
-// Paste
-// taskInput.addEventListener('paste', runEvent);
-// Input
-// taskInput.addEventListener('input', runEvent);
+// get from storage
+// const name = localStorage.getItem('name');
+// const age = localStorage.getItem('age');
 
-// CHange ---
+// // clear local storage
+// localStorage.clear();
 
+// console.log(name, age);
 
-
-function runEvent(e) {
-    console.log(`Event_Type: ${e.type}`);
-
-    console.log(`Input field value: ${taskInput.value}`);
-
-    e.preventDefault();  
-}
-
-
+document.querySelector('form').addEventListener('submit', function(e){
+    const task = document.getElementById('task').value;
+  
+    let tasks;
+  
+    if(localStorage.getItem('tasks') === null) {
+      tasks = [];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+  
+    tasks.push(task);
+  
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  
+    alert('Task saved');
+  
+    e.preventDefault();
+  });
+  
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  
+  tasks.forEach(function(task){
+    console.log(task);
