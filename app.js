@@ -1,38 +1,15 @@
-// document.querySelector('.clear-tasks').addEventListener('click',
-//   function(e){
-//     console.log('Hello!');
-//     //e.preventDefault();
-// });
+const addTask = document.querySelector('.btn');
+const list = document.querySelector('.collection');
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+addTask.addEventListener('click', fire);
 
-function onClick(e){
-  //console.log('Clicked');
-  let val;
+const li = document.createElement('li');
+li.textContent = 'I am a new list item';
+li.className = 'collection-item';
 
-  val = e;
-
-  // Event target element
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList; // To get collection
-
-  //val = e.target.innerText = 'Hi';
-
-  // Get type
-  val = e.type;
-
-  // Get timestamp
-  val = e.timeStamp;
-
-  // Coord event relative to the window, number of pixels from the top
-  val = e.clientY;
-  val = e.clientX; // number of pixels from the right
-
-  // Coord event relative to the element itself, number of pixels from the top
-  val = e.offsetY;
-  val = e.offsetX; // number of pixels from the right
-
-  console.log(val);
+function fire(e) {
+  console.log('Clicked');
+  e.preventDefault();
+  list.appendChild(li);
 }
+
