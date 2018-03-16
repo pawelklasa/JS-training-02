@@ -1,8 +1,11 @@
 const addTask = document.querySelector('.btn');
+const list = document.querySelector('.collection');
 
 addTask.addEventListener('click', fire);
 
-function fire() {
+function fire(e) {
   console.log('Clicked');
-  preventDefault();
+  e.preventDefault();
+  list.appendChild('<li></li>');
 }
+
