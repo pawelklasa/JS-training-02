@@ -39,6 +39,6 @@ document.querySelector('form').addEventListener('submit', function(e){
   
   const tasks = JSON.parse(localStorage.getItem('tasks'));
   
-  tasks.forEach(function(task)){
+  tasks.forEach(function(task){
     console.log(task);
-  };
+  });
