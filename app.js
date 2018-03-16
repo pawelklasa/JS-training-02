@@ -1,15 +1,37 @@
-const addTask = document.querySelector('.btn');
-const list = document.querySelector('.collection');
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
 
-addTask.addEventListener('click', fire);
+form.addEventListener('submit', runEvent);
 
-const li = document.createElement('li');
-li.textContent = 'I am a new list item';
-li.className = 'collection-item';
+taskInput.value = ''; // Clearing form - typically after submitting
 
-function fire(e) {
-  console.log('Clicked');
-  e.preventDefault();
-  list.appendChild(li);
+// Keydown
+// taskInput.addEventListener('keydown', runEvent);
+// Keydown
+// taskInput.addEventListener('keyup', runEvent);
+// Keypress
+// taskInput.addEventListener('keypress', runEvent);
+// Focus
+// taskInput.addEventListener('focus', runEvent);
+// Blur
+// taskInput.addEventListener('blur', runEvent);
+// Cut
+// taskInput.addEventListener('cut', runEvent);
+// Paste
+// taskInput.addEventListener('paste', runEvent);
+// Input
+// taskInput.addEventListener('input', runEvent);
+
+// CHange ---
+
+
+
+function runEvent(e) {
+    console.log(`Event_Type: ${e.type}`);
+
+    console.log(`Input field value: ${taskInput.value}`);
+
+    e.preventDefault();  
 }
+
 
